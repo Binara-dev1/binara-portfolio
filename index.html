@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Binara Akalanka | Web Developer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#007BFF',secondary:'#6c757d'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet"/>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+input[type="checkbox"] {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+}
+input[type="checkbox"]:hover {
+border-color: #007BFF;
+box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+input[type="checkbox"]:checked {
+background-color: #007BFF;
+border-color: #007BFF;
+}
+input[type="checkbox"]:checked::after {
+content: '';
+position: absolute;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+top: 2px;
+left: 6px;
+transform: rotate(45deg) scale(0);
+animation: checkmark 0.2s ease-in-out forwards;
+}
+@keyframes checkmark {
+0% {
+transform: rotate(45deg) scale(0);
+}
+100% {
+transform: rotate(45deg) scale(1);
+}
+}
+.consent-tooltip {
+position: relative;
+display: inline-flex;
+}
+.consent-tooltip .tooltip-text {
+visibility: hidden;
+position: absolute;
+bottom: 125%;
+left: 50%;
+transform: translateX(-50%);
+background-color: #333;
+color: white;
+text-align: center;
+padding: 8px 12px;
+border-radius: 6px;
+font-size: 14px;
+white-space: nowrap;
+opacity: 0;
+transition: opacity 0.2s ease;
+z-index: 1;
+}
+.consent-tooltip .tooltip-text::after {
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: #333 transparent transparent transparent;
+}
+.consent-tooltip:hover .tooltip-text {
+visibility: visible;
+opacity: 1;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #007BFF;
+transition: width 0.3s;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #007BFF;
+}
+input[type="checkbox"] {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+}
+input[type="checkbox"]:checked {
+background-color: #007BFF;
+border-color: #007BFF;
+}
+input[type="checkbox"]:checked::after {
+content: '';
+position: absolute;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+top: 2px;
+left: 6px;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body class="bg-white text-gray-800">
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a class="text-xl font-semibold text-primary" href="#">Binara Akalanka</a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex space-x-8">
+<a class="nav-link font-medium" href="#about">About</a>
+<a class="nav-link font-medium" href="#skills">Skills</a>
+<a class="nav-link font-medium" href="#contact">Contact</a>
+</div>
+<!-- Mobile Navigation Toggle -->
+<div class="md:hidden flex items-center">
+<button class="w-10 h-10 flex items-center justify-center text-gray-700" id="menu-toggle">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation Menu -->
+<div class="hidden md:hidden bg-white w-full border-t" id="mobile-menu">
+<div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+<a class="font-medium py-2" href="#about">About</a>
+<a class="font-medium py-2" href="#skills">Skills</a>
+<a class="font-medium py-2" href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 to-white">
+<div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">Binara Akalanka</h1>
+<h2 class="text-xl md:text-2xl text-primary font-semibold mb-6">Web Developer</h2>
+<p class="text-gray-600 mb-8 text-lg leading-relaxed">
+I'm a passionate web developer dedicated to building user-friendly, responsive websites and web applications. I enjoy turning ideas into real digital experiences.
+</p>
+<a class="inline-block bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap" href="#contact">Contact Me</a>
+</div>
+<div class="w-full md:w-1/2 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
+<div class="relative w-full max-w-md">
+<img alt="Binara Akalanka" class="rounded-xl shadow-lg object-cover w-full h-auto" src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20a%20young%20male%20web%20developer%20in%20casual%20business%20attire%2C%20looking%20confident%20and%20approachable%2C%20high%20quality%2C%20studio%20lighting%2C%20soft%20background%2C%20professional%20headshot%2C%20clean%20modern%20look%2C%20minimalist%20style&amp;width=500&amp;height=500&amp;seq=1&amp;orientation=squarish"/>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-20 px-6 bg-white" id="about">
+<div class="container mx-auto max-w-5xl">
+<h2 class="text-3xl font-bold mb-16 text-center">About Me</h2>
+<div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+<div class="w-full md:w-2/5" data-aos="fade-right" data-aos-duration="1000">
+<img alt="Binara at work" class="rounded-xl shadow-lg w-full h-auto object-cover" src="https://readdy.ai/api/search-image?query=professional%20web%20developer%20working%20on%20laptop%20in%20modern%20office%20environment%2C%20focused%20on%20coding%2C%20surrounded%20by%20minimal%20desk%20setup%20with%20notebook%20and%20coffee%2C%20side%20view%2C%20casual%20professional%20attire%2C%20natural%20lighting%2C%20clean%20workspace&amp;width=500&amp;height=600&amp;seq=2&amp;orientation=portrait"/>
+</div>
+<div class="w-full md:w-3/5" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+<p class="text-gray-700 mb-8 text-lg leading-relaxed">
+I'm a self-motivated and detail-oriented web developer with a strong foundation in front-end and back-end technologies. I love crafting efficient code, learning new tools, and collaborating with teams to solve real-world problems.
+</p>
+<h3 class="text-xl font-semibold mb-4">Core Strengths</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="800">
+<div class="flex items-center mb-2">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
+<i class="ri-lightbulb-line"></i>
+</div>
+<h4 class="font-medium">Problem Solving</h4>
+</div>
+<p class="text-gray-600">Analytical approach to breaking down complex challenges into manageable solutions.</p>
+</div>
+<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
+<div class="flex items-center mb-2">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
+<i class="ri-message-3-line"></i>
+</div>
+<h4 class="font-medium">Clear Communication</h4>
+</div>
+<p class="text-gray-600">Ability to explain technical concepts in accessible terms to clients and team members.</p>
+</div>
+<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
+<div class="flex items-center mb-2">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
+<i class="ri-team-line"></i>
+</div>
+<h4 class="font-medium">Teamwork</h4>
+</div>
+<p class="text-gray-600">Collaborative mindset with experience in agile development environments.</p>
+</div>
+<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
+<div class="flex items-center mb-2">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
+<i class="ri-refresh-line"></i>
+</div>
+<h4 class="font-medium">Adaptability</h4>
+</div>
+<p class="text-gray-600">Quick learner who stays current with evolving web technologies and standards.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-20 px-6 bg-gray-50" id="skills">
+<div class="container mx-auto max-w-5xl">
+<h2 class="text-3xl font-bold mb-16 text-center">My Skills</h2>
+<div class="mb-12">
+<h3 class="text-xl font-semibold mb-6 flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
+<i class="ri-code-s-slash-line"></i>
+</div>
+Technical Skills
+</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-html5-line ri-xl"></i>
+</div>
+<span class="font-medium">HTML5</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-css3-line ri-xl"></i>
+</div>
+<span class="font-medium">CSS3</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-javascript-line ri-xl"></i>
+</div>
+<span class="font-medium">JavaScript</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-php-line ri-xl"></i>
+</div>
+<span class="font-medium">PHP</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-database-2-line ri-xl"></i>
+</div>
+<span class="font-medium">MySQL</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-git-branch-line ri-xl"></i>
+</div>
+<span class="font-medium">Git</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-bootstrap-line ri-xl"></i>
+</div>
+<span class="font-medium">Bootstrap</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-6 flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
+<i class="ri-tools-line"></i>
+</div>
+Tools
+</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-code-box-line ri-xl"></i>
+</div>
+<span class="font-medium">VS Code</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-github-line ri-xl"></i>
+</div>
+<span class="font-medium">GitHub</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-chrome-line ri-xl"></i>
+</div>
+<span class="font-medium">Chrome DevTools</span>
+</div>
+<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
+<i class="ri-paint-brush-line ri-xl"></i>
+</div>
+<span class="font-medium">Figma</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-20 px-6 bg-white" id="contact">
+<div class="container mx-auto max-w-5xl">
+<h2 class="text-3xl font-bold mb-16 text-center">Get In Touch</h2>
+<div class="flex flex-col md:flex-row gap-12">
+<div class="w-full md:w-1/2">
+<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+<div class="mb-8">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<a class="text-gray-700 hover:text-primary" href="mailto:binaraakalanka@gmail.com">binaraakalanka@gmail.com</a>
+</div>
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4">
+<i class="ri-github-line ri-lg"></i>
+</div>
+<a class="text-gray-700 hover:text-primary" href="https://github.com/binaraakalanka" rel="noopener noreferrer" target="_blank">github.com/binaraakalanka</a>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4">
+<i class="ri-linkedin-line ri-lg"></i>
+</div>
+<a class="text-gray-700 hover:text-primary" href="https://www.linkedin.com/in/binaraakalanka" rel="noopener noreferrer" target="_blank">linkedin.com/in/binaraakalanka</a>
+</div>
+</div>
+<div class="bg-blue-50 p-6 rounded-lg">
+<h4 class="font-medium mb-3 flex items-center">
+<div class="w-6 h-6 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-2">
+<i class="ri-time-line"></i>
+</div>
+Availability
+</h4>
+<p class="text-gray-700 mb-4">I'm currently available for freelance work and project collaborations.</p>
+<p class="text-gray-700">Response time: Within 24 hours</p>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+<form action="https://formspree.io/f/mkgbbnnq" class="space-y-4" id method="POST"><input name="_autoresponse" type="hidden" value="Thanks for reaching out! I’ll get back to you soon."/>
+<div>
+<label class="block text-gray-700 mb-2" for="name">Name</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary" id="name" name="name" required="" type="text"/>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="email">Email</label>
+<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary" id="email" name="email" required="" type="email"/>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="message">Message</label>
+<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:border-primary" id="message" name="message" required="" rows="5"></textarea>
+</div>
+<div class="flex items-start">
+<div class="consent-tooltip">
+<input class="mt-1 mr-3" id="consent" name="consent" required="" type="checkbox"/>
+<span class="tooltip-text">Your information will be securely stored and only used to respond to your message</span>
+</div>
+<label class="text-sm text-gray-600" for="consent">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+</div>
+<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-50 py-8 px-6">
+<div class="container mx-auto max-w-5xl">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-600 mb-4 md:mb-0">© 2025 Binara Akalanka. All rights reserved.</p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white rounded-full text-gray-600 hover:text-primary transition-colors" href="https://github.com/binaraakalanka" rel="noopener noreferrer" target="_blank">
+<i class="ri-github-line ri-lg"></i>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white rounded-full text-gray-600 hover:text-primary transition-colors" href="https://www.linkedin.com/in/binaraakalanka" rel="noopener noreferrer" target="_blank">
+<i class="ri-linkedin-line ri-lg"></i>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white rounded-full text-gray-600 hover:text-primary transition-colors" href="mailto:binaraakalanka@gmail.com">
+<i class="ri-mail-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+menuToggle.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+// Toggle icon between menu and close
+const icon = menuToggle.querySelector('i');
+if (icon.classList.contains('ri-menu-line')) {
+icon.classList.remove('ri-menu-line');
+icon.classList.add('ri-close-line');
+} else {
+icon.classList.remove('ri-close-line');
+icon.classList.add('ri-menu-line');
+}
+});
+// Close mobile menu when clicking a nav link
+const mobileNavLinks = mobileMenu.querySelectorAll('a');
+mobileNavLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+const icon = menuToggle.querySelector('i');
+icon.classList.remove('ri-close-line');
+icon.classList.add('ri-menu-line');
+});
+});
+});
+</script>
+
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const navHeight = document.querySelector('nav').offsetHeight;
+const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+window.scrollTo({
+top: targetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="animation-init">
+document.addEventListener('DOMContentLoaded', function() {
+AOS.init({
+once: false,
+offset: 100,
+duration: 600,
+easing: 'ease-in-out',
+delay: 0,
+mirror: false,
+anchorPlacement: 'top-bottom'
+});
+window.addEventListener('load', AOS.refresh);
+document.addEventListener('scroll', function() {
+AOS.refresh();
+});
+});
+</script>
+</body>
+</html>
