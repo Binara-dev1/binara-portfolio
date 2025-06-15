@@ -1,245 +1,244 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta name="google-site-verification" content="lIh-vKIwoEFYLCjl34rxTU0n9YpkoKgS44FtqaKorbY"/>
 <link rel="canonical" href="https://webdev.binara.free.nf/" />
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Binara Akalanka is a web developer building user-friendly, responsive websites and applications. View my portfolio and recent projects.">
-<title>Binara Akalanka | Web Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binara Akalanka | UI/UX Designer</title>
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#007BFF',secondary:'#6c757d'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet"/>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#6366f1',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
 font-family: 'Inter', sans-serif;
 scroll-behavior: smooth;
 }
-input[type="checkbox"] {
-appearance: none;
--webkit-appearance: none;
-width: 20px;
-height: 20px;
-border: 2px solid #d1d5db;
-border-radius: 4px;
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Poppins', sans-serif;
+}
+.hero-bg {
+background-image: url('https://readdy.ai/api/search-image?query=abstract%20geometric%20shapes%20with%20gradient%20background%20in%20purple%20and%20blue%20colors%2C%20minimalist%20design%2C%20soft%20lighting%2C%20clean%20modern%20aesthetic%2C%20suitable%20for%20web%20design%20background%2C%20high%20quality%2C%20digital%20art&width=1920&height=1080&seq=hero123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.typewriter {
+overflow: hidden;
+border-right: .15em solid #6366f1;
+white-space: nowrap;
+margin: 0 auto;
+animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #6366f1 }
+}
+.project-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.skill-bar {
 position: relative;
-cursor: pointer;
-transition: all 0.2s ease-in-out;
+height: 8px;
+border-radius: 4px;
+background: #e5e7eb;
+overflow: hidden;
 }
-input[type="checkbox"]:hover {
-border-color: #007BFF;
-box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+.skill-progress {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+border-radius: 4px;
+background: linear-gradient(90deg, #6366f1, #8b5cf6);
 }
-input[type="checkbox"]:checked {
-background-color: #007BFF;
-border-color: #007BFF;
+.timeline-item {
+position: relative;
+padding-left: 28px;
 }
-input[type="checkbox"]:checked::after {
+.timeline-item:before {
 content: '';
 position: absolute;
-width: 5px;
-height: 10px;
-border: solid white;
-border-width: 0 2px 2px 0;
-top: 2px;
-left: 6px;
-transform: rotate(45deg) scale(0);
-animation: checkmark 0.2s ease-in-out forwards;
-}
-@keyframes checkmark {
-0% {
-transform: rotate(45deg) scale(0);
-}
-100% {
-transform: rotate(45deg) scale(1);
-}
-}
-.consent-tooltip {
-position: relative;
-display: inline-flex;
-}
-.consent-tooltip .tooltip-text {
-visibility: hidden;
-position: absolute;
-bottom: 125%;
-left: 50%;
-transform: translateX(-50%);
-background-color: #333;
-color: white;
-text-align: center;
-padding: 8px 12px;
-border-radius: 6px;
-font-size: 14px;
-white-space: nowrap;
-opacity: 0;
-transition: opacity 0.2s ease;
+left: 0;
+top: 0;
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: #6366f1;
 z-index: 1;
 }
-.consent-tooltip .tooltip-text::after {
-content: "";
-position: absolute;
-top: 100%;
-left: 50%;
-margin-left: -5px;
-border-width: 5px;
-border-style: solid;
-border-color: #333 transparent transparent transparent;
-}
-.consent-tooltip:hover .tooltip-text {
-visibility: visible;
-opacity: 1;
-}
-.nav-link {
-position: relative;
-}
-.nav-link::after {
+.timeline-item:after {
 content: '';
 position: absolute;
-width: 0;
-height: 2px;
-bottom: -4px;
-left: 0;
-background-color: #007BFF;
-transition: width 0.3s;
+left: 5px;
+top: 12px;
+width: 2px;
+height: calc(100% - 12px);
+background: #e5e7eb;
 }
-.nav-link:hover::after {
-width: 100%;
-}
-input:focus, textarea:focus {
-outline: none;
-border-color: #007BFF;
+.timeline-item:last-child:after {
+display: none;
 }
 input[type="checkbox"] {
 appearance: none;
 -webkit-appearance: none;
-width: 20px;
-height: 20px;
-border: 2px solid #d1d5db;
-border-radius: 4px;
+width: 50px;
+height: 24px;
+background: #e5e7eb;
+border-radius: 50px;
 position: relative;
 cursor: pointer;
+transition: background 0.3s;
 }
 input[type="checkbox"]:checked {
-background-color: #007BFF;
-border-color: #007BFF;
+background: #6366f1;
+}
+input[type="checkbox"]::after {
+content: "";
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: white;
+position: absolute;
+top: 2px;
+left: 2px;
+transition: left 0.3s;
 }
 input[type="checkbox"]:checked::after {
-content: '';
-position: absolute;
-width: 5px;
-height: 10px;
-border: solid white;
-border-width: 0 2px 2px 0;
-top: 2px;
-left: 6px;
-transform: rotate(45deg);
+left: 28px;
+}
+.progress-bar {
+position: fixed;
+top: 0;
+left: 0;
+height: 3px;
+background: linear-gradient(90deg, #6366f1, #8b5cf6);
+z-index: 1000;
+width: 0%;
+}
+.custom-input {
+border: 1px solid #e5e7eb;
+transition: border-color 0.3s;
+}
+.custom-input:focus {
+border-color: #6366f1;
+outline: none;
+}
+.blog-card {
+transition: transform 0.3s ease;
+}
+.blog-card:hover {
+transform: translateY(-5px);
+}
+.filter-btn.active {
+background-color: #6366f1;
+color: white;
 }
 </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white">
+<div class="progress-bar"></div>
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
-<div class="container mx-auto px-6 py-4 flex justify-between items-center">
-<a href="#" class="text-xl font-semibold text-primary">
-  <span class="font-bold">Binara</span><span class="text-black font-bold">.</span>
-</a>
-<!-- Desktop Navigation -->
-<div class="hidden md:flex space-x-8">
-<a class="nav-link font-medium" href="#about">About</a>
-<a class="nav-link font-medium" href="#skills">Skills</a>
-<a class="nav-link font-medium" href="#contact">Contact</a>
+<nav class="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-50 shadow-sm">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Poppins'] font-bold text-gray-800">Binara<span class="text-primary">.Design</span></a>
+<div class="flex items-center space-x-8">
+<div class="hidden md:flex items-center space-x-8">
+<a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
+<a href="#skills" class="text-gray-600 hover:text-primary transition-colors">Skills</a>
+<a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
 </div>
-<!-- Mobile Navigation Toggle -->
-<div class="md:hidden flex items-center">
-<button class="w-10 h-10 flex items-center justify-center text-gray-700" id="menu-toggle">
-<i class="ri-menu-line ri-lg"></i>
+<button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
+<i class="ri-menu-line text-2xl text-gray-800"></i>
 </button>
 </div>
 </div>
-<!-- Mobile Navigation Menu -->
-<div class="hidden md:hidden bg-white w-full border-t" id="mobile-menu">
-<div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
-<a class="font-medium py-2" href="#about">About</a>
-<a class="font-medium py-2" href="#skills">Skills</a>
-<a class="font-medium py-2" href="#contact">Contact</a>
+<!-- Mobile Menu -->
+<div class="md:hidden hidden bg-white w-full" id="mobile-menu">
+<div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+<a href="#about" class="text-gray-600 hover:text-primary transition-colors py-2">About</a>
+<a href="#skills" class="text-gray-600 hover:text-primary transition-colors py-2">Skills</a>
+<a href="#contact" class="text-gray-600 hover:text-primary transition-colors py-2">Contact</a>
 </div>
 </div>
 </nav>
 <!-- Hero Section -->
-<section class="pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 to-white">
-<div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center">
-<div class="w-full md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
-<h1 class="text-4xl md:text-5xl font-bold mb-4">Binara Akalanka</h1>
-<h2 class="text-xl md:text-2xl text-primary font-semibold mb-6">Web Developer</h2>
-<p class="text-gray-600 mb-8 text-lg leading-relaxed">
-I’m a web developer who loves building responsive, user-friendly websites and web apps. I enjoy bringing ideas to life and creating digital experiences that people actually enjoy using.
-</p>
-<a class="inline-block bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap" href="#contact">Contact Me</a>
+<section class="hero-bg min-h-screen flex items-center relative pt-20">
+<div class="absolute inset-0 bg-gradient-to-r from-white to-transparent"></div>
+<div class="container mx-auto px-4 py-20 relative z-10">
+<div class="max-w-3xl">
+<p class="text-primary font-medium mb-2">UI/UX Designer</p>
+<h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6">Hi, I'm Binara Akalanka</h1>
+<div class="h-12 overflow-hidden">
+<p class="typewriter text-xl text-gray-600 mb-8">Crafting modern, user-focused interfaces.</p>
 </div>
-<div class="w-full md:w-1/2 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
-<div class="relative w-full max-w-md">
-<img alt="Binara Akalanka" class="rounded-xl shadow-lg object-cover w-full h-auto" src="Hero.png"/>
+<p class="text-gray-600 text-lg mb-8 max-w-2xl">I blend creativity with functionality to design digital experiences that are both beautiful and intuitive. My approach focuses on understanding user needs and solving real problems through thoughtful design.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#contact" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Get In Touch</a>
+</div>
+<div class="flex space-x-6 mt-12">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
+<i class="ri-dribbble-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
+<i class="ri-behance-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
+<i class="ri-instagram-line"></i>
+</a>
 </div>
 </div>
 </div>
 </section>
-<!-- About Me Section -->
-<section class="py-20 px-6 bg-white" id="about">
-<div class="container mx-auto max-w-5xl">
-<h2 class="text-3xl font-bold mb-16 text-center">About Me</h2>
-<div class="flex flex-col md:flex-row items-center md:items-start gap-12">
-<div class="w-full md:w-2/5" data-aos="fade-right" data-aos-duration="1000">
-<img alt="Binara at work" class="rounded-xl shadow-lg w-full h-auto object-cover" src="About.png"/>
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<p class="text-primary font-medium mb-2">About Me</p>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">My Design Journey</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
 </div>
-<div class="w-full md:w-3/5" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-<p class="text-gray-700 mb-8 text-lg leading-relaxed">
-I'm a self-motivated and detail-oriented web developer with a strong foundation in front-end and back-end technologies. I love crafting efficient code, learning new tools, and collaborating with teams to solve real-world problems.
-</p>
-<h3 class="text-xl font-semibold mb-4">Core Strengths</h3>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="800">
-<div class="flex items-center mb-2">
-<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
-<i class="ri-lightbulb-line"></i>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<img src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20a%20young%20Asian%20male%20UI%2FUX%20designer%20in%20a%20modern%20office%20environment%2C%20wearing%20smart%20casual%20attire%2C%20natural%20lighting%2C%20high%20quality%20professional%20photography%2C%20clean%20background%2C%20friendly%20expression&width=600&height=800&seq=portrait123&orientation=portrait" alt="Binara Akalanka" class="w-full h-auto rounded-lg shadow-xl">
 </div>
-<h4 class="font-medium">Problem Solving</h4>
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Who I Am</h3>
+<p class="text-gray-600 mb-6">I'm a UI/UX designer with over 5 years of experience creating digital products that people love to use. My journey began with a background in visual design, which evolved into a passion for creating meaningful user experiences.</p>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">My Approach</h3>
+<p class="text-gray-600 mb-6">I believe that great design is about solving problems, not just making things look pretty. My process involves deep user research, iterative prototyping, and continuous testing to ensure that every design decision serves a purpose.</p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div>
+<div class="text-4xl font-bold text-primary mb-2">50+</div>
+<p class="text-gray-600">Projects Completed</p>
 </div>
-<p class="text-gray-600">Analytical approach to breaking down complex challenges into manageable solutions.</p>
+<div>
+<div class="text-4xl font-bold text-primary mb-2">30+</div>
+<p class="text-gray-600">Happy Clients</p>
 </div>
-<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
-<div class="flex items-center mb-2">
-<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
-<i class="ri-message-3-line"></i>
+<div>
+<div class="text-4xl font-bold text-primary mb-2">5+</div>
+<p class="text-gray-600">Years Experience</p>
 </div>
-<h4 class="font-medium">Clear Communication</h4>
-</div>
-<p class="text-gray-600">Ability to explain technical concepts in accessible terms to clients and team members.</p>
-</div>
-<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
-<div class="flex items-center mb-2">
-<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
-<i class="ri-team-line"></i>
-</div>
-<h4 class="font-medium">Teamwork</h4>
-</div>
-<p class="text-gray-600">Collaborative mindset with experience in agile development environments.</p>
-</div>
-<div class="bg-gray-50 p-5 rounded-lg shadow-sm" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
-<div class="flex items-center mb-2">
-<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
-<i class="ri-refresh-line"></i>
-</div>
-<h4 class="font-medium">Adaptability</h4>
-</div>
-<p class="text-gray-600">Quick learner who stays current with evolving web technologies and standards.</p>
+<div>
+<div class="text-4xl font-bold text-primary mb-2">15+</div>
+<p class="text-gray-600">Design Awards</p>
 </div>
 </div>
 </div>
@@ -247,214 +246,307 @@ I'm a self-motivated and detail-oriented web developer with a strong foundation 
 </div>
 </section>
 <!-- Skills Section -->
-<section class="py-20 px-6 bg-gray-50" id="skills">
-<div class="container mx-auto max-w-5xl">
-<h2 class="text-3xl font-bold mb-16 text-center">My Skills</h2>
-<div class="mb-12">
-<h3 class="text-xl font-semibold mb-6 flex items-center">
-<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
-<i class="ri-code-s-slash-line"></i>
+<section id="skills" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<p class="text-primary font-medium mb-2">My Expertise</p>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Tools</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-600">Here's what I bring to the table. My toolkit combines design software proficiency with a deep understanding of user experience principles.</p>
 </div>
-Technical Skills
-</h3>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-html5-line ri-xl"></i>
+<div class="grid md:grid-cols-2 gap-12">
+<!-- Design Skills -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Design Skills</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-700">UI Design</span>
+<span class="text-primary">95%</span>
 </div>
-<span class="font-medium">HTML5</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-css3-line ri-xl"></i>
-</div>
-<span class="font-medium">CSS3</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-javascript-line ri-xl"></i>
-</div>
-<span class="font-medium">JavaScript</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-php-line ri-xl"></i>
-</div>
-<span class="font-medium">PHP</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-database-2-line ri-xl"></i>
-</div>
-<span class="font-medium">MySQL</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-git-branch-line ri-xl"></i>
-</div>
-<span class="font-medium">Git</span>
-</div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-bootstrap-line ri-xl"></i>
-</div>
-<span class="font-medium">Bootstrap</span>
-</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%"></div>
 </div>
 </div>
 <div>
-<h3 class="text-xl font-semibold mb-6 flex items-center">
-<div class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-3">
-<i class="ri-tools-line"></i>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-700">UX Research</span>
+<span class="text-primary">90%</span>
 </div>
-Tools
-</h3>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-code-box-line ri-xl"></i>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
 </div>
-<span class="font-medium">VS Code</span>
 </div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-github-line ri-xl"></i>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-700">Wireframing & Prototyping</span>
+<span class="text-primary">95%</span>
 </div>
-<span class="font-medium">GitHub</span>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%"></div>
 </div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-chrome-line ri-xl"></i>
 </div>
-<span class="font-medium">Chrome DevTools</span>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-700">Interaction Design</span>
+<span class="text-primary">85%</span>
 </div>
-<div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full text-primary mb-3">
-<i class="ri-paint-brush-line ri-xl"></i>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
 </div>
-<span class="font-medium">Figma</span>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-700">Visual Design</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-medium text-gray-700">Design Systems</span>
+<span class="text-primary">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tools -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Tools & Technologies</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-figma-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">Figma</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-adobe-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">Adobe XD</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-sketch-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">Sketch</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-photoshop-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">Photoshop</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-illustrator-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">Illustrator</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-code-s-slash-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">HTML/CSS</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-invision-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">InVision</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-prototype-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">Principle</h4>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-file-list-3-line text-3xl"></i>
+</div>
+<h4 class="font-medium text-gray-900">Zeplin</h4>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Contact Section -->
-<section class="py-20 px-6 bg-white" id="contact">
-<div class="container mx-auto max-w-5xl">
-<h2 class="text-3xl font-bold mb-16 text-center">Get In Touch</h2>
-<div class="flex flex-col md:flex-row gap-12">
-<div class="w-full md:w-1/2">
-<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-<div class="mb-8">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4">
-<i class="ri-mail-line ri-lg"></i>
+<section id="contact" class="py-20">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<p class="text-primary font-medium mb-2">Get In Touch</p>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Work Together</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-gray-600">Have a project in mind or just want to say hello? I'd love to hear from you!</p>
 </div>
-<a class="text-gray-700 hover:text-primary" href="mailto:binaraakalanka@gmail.com">binaraakalanka@gmail.com</a>
-</div>
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4">
-<i class="ri-github-line ri-lg"></i>
-</div>
-<a class="text-gray-700 hover:text-primary" href="https://github.com/binaraakalanka" rel="noopener noreferrer" target="_blank">github.com/binaraakalanka</a>
-</div>
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-4">
-<i class="ri-linkedin-line ri-lg"></i>
-</div>
-<a class="text-gray-700 hover:text-primary" href="https://www.linkedin.com/in/binaraakalanka" rel="noopener noreferrer" target="_blank">linkedin.com/in/binaraakalanka</a>
-</div>
-</div>
-<div class="bg-blue-50 p-6 rounded-lg">
-<h4 class="font-medium mb-3 flex items-center">
-<div class="w-6 h-6 flex items-center justify-center bg-blue-100 rounded-full text-primary mr-2">
-<i class="ri-time-line"></i>
-</div>
-Availability
-</h4>
-<p class="text-gray-700 mb-4">I'm currently available for freelance work and project collaborations.</p>
-<p class="text-gray-700">Response time: Within 24 hours</p>
-</div>
-</div>
-<div class="w-full md:w-1/2">
-<h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
-<form action="https://formspree.io/f/mkgbbnnq" class="space-y-4" id method="POST"><input name="_autoresponse" type="hidden" value="Thanks for reaching out! I’ll get back to you soon."/>
+<div class="grid md:grid-cols-2 gap-12">
 <div>
-<label class="block text-gray-700 mb-2" for="name">Name</label>
-<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary" id="name" name="name" required="" type="text"/>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
+<i class="ri-mail-line text-xl"></i>
 </div>
 <div>
-<label class="block text-gray-700 mb-2" for="email">Email</label>
-<input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary" id="email" name="email" required="" type="email"/>
+<h4 class="font-medium text-gray-900 mb-1">Email</h4>
+<p class="text-gray-600">hello@binaraakalanka.com</p>
 </div>
-<div>
-<label class="block text-gray-700 mb-2" for="message">Message</label>
-<textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:border-primary" id="message" name="message" required="" rows="5"></textarea>
 </div>
 <div class="flex items-start">
-<div class="consent-tooltip">
-<input class="mt-1 mr-3" id="consent" name="consent" required="" type="checkbox"/>
-<span class="tooltip-text">Your information will be securely stored and only used to respond to your message</span>
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
+<i class="ri-phone-line text-xl"></i>
 </div>
-<label class="text-sm text-gray-600" for="consent">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Phone</h4>
+<p class="text-gray-600">+94 76 123 4567</p>
 </div>
-<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-blue-600 transition-colors whitespace-nowrap" type="submit">Send Message</button>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
+<i class="ri-map-pin-line text-xl"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Location</h4>
+<p class="text-gray-600">Colombo, Sri Lanka</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
+<i class="ri-time-line text-xl"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Working Hours</h4>
+<p class="text-gray-600">Monday - Friday: 9am - 6pm</p>
+</div>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mt-12 mb-6">Connect With Me</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-dribbble-line text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-behance-line text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-linkedin-line text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-instagram-line text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
+<i class="ri-twitter-x-line text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
+<form id="contact-form" class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your name" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your email" required>
+</div>
+</div>
+<div>
+<label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+<input type="text" id="subject" name="subject" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Subject" required>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your message" required></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all flex items-center justify-center whitespace-nowrap">
+<i class="ri-send-plane-line mr-2"></i>
+Send Message
+</button>
 </form>
 </div>
 </div>
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-gray-50 py-8 px-6">
-<div class="container mx-auto max-w-5xl">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-600 mb-4 md:mb-0">© 2025 Binara Akalanka. All rights reserved.</p>
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid md:grid-cols-3 gap-8">
+<div>
+<a href="#" class="text-2xl font-['Poppins'] font-bold text-white mb-4 inline-block">Binara<span class="text-primary">.Design</span></a>
+<p class="text-gray-400 mb-6">Crafting user-centered digital experiences that combine aesthetics with functionality.</p>
 <div class="flex space-x-4">
-<a class="w-10 h-10 flex items-center justify-center bg-white rounded-full text-gray-600 hover:text-primary transition-colors" href="https://github.com/binaraakalanka" rel="noopener noreferrer" target="_blank">
-<i class="ri-github-line ri-lg"></i>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-dribbble-line text-xl"></i>
 </a>
-<a class="w-10 h-10 flex items-center justify-center bg-white rounded-full text-gray-600 hover:text-primary transition-colors" href="https://www.linkedin.com/in/binaraakalanka" rel="noopener noreferrer" target="_blank">
-<i class="ri-linkedin-line ri-lg"></i>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-behance-line text-xl"></i>
 </a>
-<a class="w-10 h-10 flex items-center justify-center bg-white rounded-full text-gray-600 hover:text-primary transition-colors" href="mailto:binaraakalanka@gmail.com">
-<i class="ri-mail-line ri-lg"></i>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-linkedin-line text-xl"></i>
 </a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-instagram-line text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">About Me</a></li>
+<li><a href="#skills" class="text-gray-400 hover:text-primary transition-colors">Skills</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">UI Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">UX Research</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Prototyping</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Design Systems</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Brand Identity</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Consultation</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Binara Akalanka. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Cookies Policy</a>
 </div>
 </div>
 </div>
 </footer>
+<a href="#" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all">
+<i class="ri-arrow-up-line text-xl"></i>
+</a>
 <script id="navigation-script">
 document.addEventListener('DOMContentLoaded', function() {
-const menuToggle = document.getElementById('menu-toggle');
+const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
-menuToggle.addEventListener('click', function() {
+mobileMenuButton.addEventListener('click', function() {
 mobileMenu.classList.toggle('hidden');
-// Toggle icon between menu and close
-const icon = menuToggle.querySelector('i');
-if (icon.classList.contains('ri-menu-line')) {
-icon.classList.remove('ri-menu-line');
-icon.classList.add('ri-close-line');
-} else {
-icon.classList.remove('ri-close-line');
-icon.classList.add('ri-menu-line');
-}
 });
-// Close mobile menu when clicking a nav link
-const mobileNavLinks = mobileMenu.querySelectorAll('a');
-mobileNavLinks.forEach(link => {
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
 link.addEventListener('click', function() {
 mobileMenu.classList.add('hidden');
-const icon = menuToggle.querySelector('i');
-icon.classList.remove('ri-close-line');
-icon.classList.add('ri-menu-line');
 });
 });
-});
-</script>
-
-<script id="smooth-scroll-script">
-document.addEventListener('DOMContentLoaded', function() {
-// Smooth scrolling for navigation links
+// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function(e) {
 e.preventDefault();
@@ -462,10 +554,8 @@ const targetId = this.getAttribute('href');
 if (targetId === '#') return;
 const targetElement = document.querySelector(targetId);
 if (targetElement) {
-const navHeight = document.querySelector('nav').offsetHeight;
-const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
 window.scrollTo({
-top: targetPosition,
+top: targetElement.offsetTop - 80,
 behavior: 'smooth'
 });
 }
@@ -473,20 +563,74 @@ behavior: 'smooth'
 });
 });
 </script>
-<script id="animation-init">
+<script id="scroll-progress-script">
 document.addEventListener('DOMContentLoaded', function() {
-AOS.init({
-once: false,
-offset: 100,
-duration: 600,
-easing: 'ease-in-out',
-delay: 0,
-mirror: false,
-anchorPlacement: 'top-bottom'
+const progressBar = document.querySelector('.progress-bar');
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+// Update progress bar
+const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+const scrolled = (window.scrollY / windowHeight) * 100;
+progressBar.style.width = scrolled + '%';
+// Show/hide back to top button
+if (window.scrollY > 300) {
+backToTop.classList.remove('opacity-0', 'invisible');
+backToTop.classList.add('opacity-100', 'visible');
+} else {
+backToTop.classList.remove('opacity-100', 'visible');
+backToTop.classList.add('opacity-0', 'invisible');
+}
 });
-window.addEventListener('load', AOS.refresh);
-document.addEventListener('scroll', function() {
-AOS.refresh();
+// Back to top functionality
+backToTop.addEventListener('click', function(e) {
+e.preventDefault();
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+<script id="project-filter-script">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => btn.classList.remove('active'));
+// Add active class to clicked button
+this.classList.add('active');
+const filter = this.getAttribute('data-filter');
+// Show/hide projects based on filter
+projectCards.forEach(card => {
+if (filter === 'all' || card.getAttribute('data-category') === filter) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+});
+});
+</script>
+<script id="contact-form-script">
+document.addEventListener('DOMContentLoaded', function() {
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+// Here you would typically send the form data to a server
+// For demonstration, we'll just log it and show a success message
+console.log({ name, email, subject, message });
+// Reset form
+contactForm.reset();
+// Show success message (in a real application)
+alert('Thank you for your message! I will get back to you soon.');
 });
 });
 </script>
