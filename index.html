@@ -5,35 +5,70 @@
 <link rel="canonical" href="https://webdev.binara.free.nf/" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Binara Akalanka | UI/UX Designer</title>
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#6366f1',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<title>Binara Akalanka | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#6366f1',secondary:'#8b5cf6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("Zi1oAZ7wjZpJHJ7i_"); // Replace with EmailJS public key
+  })();
+</script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
+:root {
+--blue-light: #E8F3FF;
+--purple-light: #F0E7FF;
+--white: #FFFFFF;
+}
 body {
 font-family: 'Inter', sans-serif;
 scroll-behavior: smooth;
+background-color: var(--blue-light);
 }
 h1, h2, h3, h4, h5, h6 {
 font-family: 'Poppins', sans-serif;
 }
-.hero-bg {
-background-image: url('https://readdy.ai/api/search-image?query=abstract%20geometric%20shapes%20with%20gradient%20background%20in%20purple%20and%20blue%20colors%2C%20minimalist%20design%2C%20soft%20lighting%2C%20clean%20modern%20aesthetic%2C%20suitable%20for%20web%20design%20background%2C%20high%20quality%2C%20digital%20art&width=1920&height=1080&seq=hero123&orientation=landscape');
-background-size: cover;
-background-position: center;
+.glass-nav {
+backdrop-filter: blur(10px);
+background-color: rgba(255, 255, 255, 0.7);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #6366f1;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.hero-portrait {
+animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-15px); }
+}
+.hero-portrait:hover {
+animation-play-state: paused;
 }
 .typewriter {
 overflow: hidden;
-border-right: .15em solid #6366f1;
+border-right: 2px solid #6366f1;
 white-space: nowrap;
 margin: 0 auto;
-animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 @keyframes typing {
 from { width: 0 }
@@ -43,202 +78,225 @@ to { width: 100% }
 from, to { border-color: transparent }
 50% { border-color: #6366f1 }
 }
-.project-card {
+.fade-in-up {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.5s ease, transform 0.5s ease;
+will-change: opacity, transform;
+}
+.fade-in-up.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.skill-card {
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.project-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.skill-card:hover {
+transform: scale(1.05);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
-.skill-bar {
-position: relative;
-height: 8px;
-border-radius: 4px;
-background: #e5e7eb;
-overflow: hidden;
+.skill-icon {
+animation: pulse 2s infinite;
 }
-.skill-progress {
-position: absolute;
-top: 0;
-left: 0;
-height: 100%;
-border-radius: 4px;
-background: linear-gradient(90deg, #6366f1, #8b5cf6);
-}
-.timeline-item {
-position: relative;
-padding-left: 28px;
-}
-.timeline-item:before {
-content: '';
-position: absolute;
-left: 0;
-top: 0;
-width: 12px;
-height: 12px;
-border-radius: 50%;
-background: #6366f1;
-z-index: 1;
-}
-.timeline-item:after {
-content: '';
-position: absolute;
-left: 5px;
-top: 12px;
-width: 2px;
-height: calc(100% - 12px);
-background: #e5e7eb;
-}
-.timeline-item:last-child:after {
-display: none;
-}
-input[type="checkbox"] {
-appearance: none;
--webkit-appearance: none;
-width: 50px;
-height: 24px;
-background: #e5e7eb;
-border-radius: 50px;
-position: relative;
-cursor: pointer;
-transition: background 0.3s;
-}
-input[type="checkbox"]:checked {
-background: #6366f1;
-}
-input[type="checkbox"]::after {
-content: "";
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background: white;
-position: absolute;
-top: 2px;
-left: 2px;
-transition: left 0.3s;
-}
-input[type="checkbox"]:checked::after {
-left: 28px;
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
 }
 .progress-bar {
-position: fixed;
-top: 0;
-left: 0;
-height: 3px;
-background: linear-gradient(90deg, #6366f1, #8b5cf6);
-z-index: 1000;
-width: 0%;
+width: 0;
+transition: width 1s ease-in-out;
 }
-.custom-input {
-border: 1px solid #e5e7eb;
-transition: border-color 0.3s;
-}
-.custom-input:focus {
-border-color: #6366f1;
-outline: none;
-}
-.blog-card {
+.project-card {
 transition: transform 0.3s ease;
 }
-.blog-card:hover {
+.project-card:hover {
 transform: translateY(-5px);
 }
-.filter-btn.active {
-background-color: #6366f1;
-color: white;
+.project-overlay {
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.project-card:hover .project-overlay {
+opacity: 1;
+}
+.form-input {
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+border: 2px solid transparent;
+}
+.form-input:focus {
+border-color: #6366f1;
+box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+outline: none;
+}
+.submit-btn {
+background: linear-gradient(45deg, #6366f1, #8b5cf6);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.submit-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+.social-icon {
+transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icon:hover {
+transform: scale(1.2);
+color: #6366f1;
+}
+.cursor-trail {
+position: absolute;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: rgba(99, 102, 241, 0.5);
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+transition: opacity 0.5s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+* {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+}
+.mobile-menu {
+transform: translateX(100%);
+transition: transform 0.3s ease;
+}
+.mobile-menu.open {
+transform: translateX(0);
+}
+.hamburger span {
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.open span:nth-child(1) {
+transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+transform: translateY(-8px) rotate(-45deg);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
 }
 </style>
 </head>
-<body class="bg-white">
-<div class="progress-bar"></div>
+<body>
+<div id="cursor-container"></div>
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-50 shadow-sm">
-<div class="container mx-auto px-4 py-4 flex justify-between items-center">
-<a href="#" class="text-2xl font-['Poppins'] font-bold text-gray-800">Binara<span class="text-primary">.Design</span></a>
-<div class="flex items-center space-x-8">
-<div class="hidden md:flex items-center space-x-8">
-<a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
-<a href="#skills" class="text-gray-600 hover:text-primary transition-colors">Skills</a>
-<a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+<div class="container mx-auto px-4 py-4">
+<nav class="flex justify-between items-center">
+<a class="text-xl font-semibold text-primary" href="#">Binara<span class="text-black">.</span></a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex space-x-8">
+<a href="#home" class="nav-link text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="#about" class="nav-link text-gray-800 hover:text-primary transition-colors">About</a>
+<a href="#skills" class="nav-link text-gray-800 hover:text-primary transition-colors">Skills</a>
+<a href="#projects" class="nav-link text-gray-800 hover:text-primary transition-colors">Projects</a>
+<a href="#contact" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
 </div>
-<button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
-<i class="ri-menu-line text-2xl text-gray-800"></i>
+<!-- Mobile Navigation Button -->
+<div class="md:hidden">
+<button class="hamburger focus:outline-none" id="menu-toggle">
+<span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+<span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+<span class="block w-6 h-0.5 bg-gray-800"></span>
 </button>
 </div>
+</nav>
 </div>
 <!-- Mobile Menu -->
-<div class="md:hidden hidden bg-white w-full" id="mobile-menu">
-<div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-<a href="#about" class="text-gray-600 hover:text-primary transition-colors py-2">About</a>
-<a href="#skills" class="text-gray-600 hover:text-primary transition-colors py-2">Skills</a>
-<a href="#contact" class="text-gray-600 hover:text-primary transition-colors py-2">Contact</a>
+<div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 p-6 flex flex-col md:hidden">
+<div class="flex justify-end mb-8">
+<button class="focus:outline-none" id="close-menu">
+<i class="ri-close-line ri-xl text-gray-800"></i>
+</button>
+</div>
+<div class="flex flex-col space-y-6">
+<a href="#home" class="text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="#about" class="text-gray-800 hover:text-primary transition-colors">About</a>
+<a href="#skills" class="text-gray-800 hover:text-primary transition-colors">Skills</a>
+<a href="#projects" class="text-gray-800 hover:text-primary transition-colors">Projects</a>
+<a href="#contact" class="text-gray-800 hover:text-primary transition-colors">Contact</a>
 </div>
 </div>
-</nav>
+</header>
 <!-- Hero Section -->
-<section class="hero-bg min-h-screen flex items-center relative pt-20">
-<div class="absolute inset-0 bg-gradient-to-r from-white to-transparent"></div>
-<div class="container mx-auto px-4 py-20 relative z-10">
-<div class="max-w-3xl">
-<p class="text-primary font-medium mb-2">UI/UX Designer</p>
-<h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6">Hi, I'm Binara Akalanka</h1>
-<div class="h-12 overflow-hidden">
-<p class="typewriter text-xl text-gray-600 mb-8">Crafting modern, user-focused interfaces.</p>
+<section id="home" class="min-h-screen pt-24 pb-16 flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=anime-style%20background%20with%20soft%20gradient%20from%20light%20blue%20to%20light%20purple%2C%20minimalist%2C%20clean%20design%2C%20subtle%20geometric%20patterns%2C%20modern%20and%20professional%20look%2C%20perfect%20for%20web%20developer%20portfolio&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-1/2 mb-12 md:mb-0 fade-in-up">
+<h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-900 typewriter">Binara Akalanka</h1>
+<h2 class="text-2xl md:text-3xl font-medium mb-6 text-primary">Web Developer & Designer</h2>
+<p class="text-lg text-gray-700 mb-8 max-w-lg">Crafting beautiful, functional websites with a touch of anime-inspired creativity. Let's bring your digital vision to life!</p>
+<div class="flex space-x-4">
+<a href="#contact" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-indigo-600 transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">Get in Touch</a>
+<a href="#projects" class="border-2 border-primary text-primary px-6 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">View Projects</a>
 </div>
-<p class="text-gray-600 text-lg mb-8 max-w-2xl">I blend creativity with functionality to design digital experiences that are both beautiful and intuitive. My approach focuses on understanding user needs and solving real problems through thoughtful design.</p>
-<div class="flex flex-wrap gap-4">
-<a href="#contact" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap">Get In Touch</a>
 </div>
-<div class="flex space-x-6 mt-12">
-<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
-<i class="ri-dribbble-line"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
-<i class="ri-behance-line"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
-<i class="ri-linkedin-line"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-all">
-<i class="ri-instagram-line"></i>
-</a>
+<div class="md:w-1/2 flex justify-center fade-in-up">
+<div class="hero-portrait relative w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+<img src="https://readdy.ai/api/search-image?query=anime-style%20portrait%20of%20a%20young%20male%20web%20developer%20with%20short%20dark%20hair%2C%20glasses%2C%20friendly%20smile%2C%20professional%20look%2C%20digital%20art%20style%2C%20high%20quality%2C%20detailed%2C%20soft%20lighting%2C%20clean%20background&width=800&height=800&seq=2&orientation=squarish" alt="Binara Akalanka" class="w-full h-full object-cover object-top">
+</div>
 </div>
 </div>
 </div>
 </section>
 <!-- About Section -->
-<section id="about" class="py-20 bg-gray-50">
+<section id="about" class="py-20 bg-white">
 <div class="container mx-auto px-4">
-<div class="max-w-3xl mx-auto text-center mb-16">
-<p class="text-primary font-medium mb-2">About Me</p>
-<h2 class="text-4xl font-bold text-gray-900 mb-4">My Design Journey</h2>
-<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 fade-in-up">About Me</h2>
+<div class="flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-2/5 mb-10 md:mb-0 fade-in-up">
+<div class="relative">
+<div class="absolute -top-4 -left-4 w-full h-full bg-primary opacity-10 rounded-2xl"></div>
+<img src="https://readdy.ai/api/search-image?query=anime-style%20illustration%20of%20a%20male%20web%20developer%20working%20on%20multiple%20screens%2C%20focused%20expression%2C%20modern%20workspace%2C%20digital%20art%20style%2C%20professional%20environment%2C%20soft%20lighting%2C%20detailed%2C%20clean%20background&width=600&height=800&seq=3&orientation=portrait" alt="Binara at work" class="rounded-2xl shadow-lg relative z-10 w-full">
 </div>
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div>
-<img src="PFP.png" alt="Binara Akalanka" class="w-full h-auto rounded-lg shadow-xl">
 </div>
-<div>
-<h3 class="text-2xl font-bold text-gray-900 mb-4">Who I Am</h3>
-<p class="text-gray-600 mb-6">I'm a UI/UX designer with over 5 years of experience creating digital products that people love to use. My journey began with a background in visual design, which evolved into a passion for creating meaningful user experiences.</p>
-<h3 class="text-2xl font-bold text-gray-900 mb-4">My Approach</h3>
-<p class="text-gray-600 mb-6">I believe that great design is about solving problems, not just making things look pretty. My process involves deep user research, iterative prototyping, and continuous testing to ensure that every design decision serves a purpose.</p>
-<div class="grid grid-cols-2 gap-6 mb-8">
-<div>
-<div class="text-4xl font-bold text-primary mb-2">50+</div>
-<p class="text-gray-600">Projects Completed</p>
+<div class="md:w-1/2 fade-in-up">
+<h3 class="text-2xl font-semibold mb-4 text-gray-900">Who am I?</h3>
+<p class="text-gray-700 mb-6 leading-relaxed">
+Hello! I'm Binara Akalanka, a passionate web developer live in Kaluthara, Sri Lanka. With 1 years of experience in creating responsive and user-friendly websites, I blend technical expertise with creative design to deliver exceptional digital experiences.
+</p>
+<p class="text-gray-700 mb-6 leading-relaxed">
+My journey into web development began during my university years, where I discovered my love for coding and design. Since then, I’ve been continuously learning and building sample projects to refine my skills and explore different aspects of modern web technologies. While I haven't worked with clients just yet, I'm actively developing my portfolio and looking forward to collaborating on real-world projects soon.
+</p>
+<p class="text-gray-700 mb-8 leading-relaxed">
+When I'm not coding, you can find me exploring anime art, playing video games, or hiking in the beautiful mountains around Tokyo. I believe that these diverse interests help fuel my creativity and bring a unique perspective to my work.
+</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 mr-3">
+<i class="ri-map-pin-line text-primary ri-lg"></i>
 </div>
-<div>
-<div class="text-4xl font-bold text-primary mb-2">30+</div>
-<p class="text-gray-600">Happy Clients</p>
+<span class="text-gray-700">Kaluthara, Sri Lanka</span>
 </div>
-<div>
-<div class="text-4xl font-bold text-primary mb-2">5+</div>
-<p class="text-gray-600">Years Experience</p>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 mr-3">
+<i class="ri-briefcase-line text-primary ri-lg"></i>
 </div>
-<div>
-<div class="text-4xl font-bold text-primary mb-2">15+</div>
-<p class="text-gray-600">Design Awards</p>
+<span class="text-gray-700">Freelance Available</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 mr-3">
+<i class="ri-graduation-cap-line text-primary ri-lg"></i>
+</div>
+<span class="text-gray-700">HND in Computing</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 mr-3">
+<i class="ri-translate-2-line text-primary ri-lg"></i>
+</div>
+<span class="text-gray-700">Sinhala, English</span>
 </div>
 </div>
 </div>
@@ -246,132 +304,216 @@ color: white;
 </div>
 </section>
 <!-- Skills Section -->
-<section id="skills" class="py-20 bg-gray-50">
+<section id="skills" class="py-20 bg-purple-50">
 <div class="container mx-auto px-4">
-<div class="max-w-3xl mx-auto text-center mb-16">
-<p class="text-primary font-medium mb-2">My Expertise</p>
-<h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Tools</h2>
-<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
-<p class="text-gray-600">Here's what I bring to the table. My toolkit combines design software proficiency with a deep understanding of user experience principles.</p>
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16 fade-in-up">My Skills</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- HTML -->
+<div class="skill-card bg-white p-6 rounded-2xl shadow-lg fade-in-up">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-red-100 mr-4">
+<i class="ri-html5-line text-red-500 ri-2x skill-icon"></i>
 </div>
-<div class="grid md:grid-cols-2 gap-12">
-<!-- Design Skills -->
-<div>
-<h3 class="text-2xl font-bold text-gray-900 mb-6">Design Skills</h3>
-<div class="space-y-6">
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium text-gray-700">UI Design</span>
-<span class="text-primary">95%</span>
+<h3 class="text-xl font-semibold text-gray-900">HTML5</h3>
 </div>
-<div class="skill-bar">
-<div class="skill-progress" style="width: 95%"></div>
+<p class="text-gray-700 mb-4">Semantic markup, accessibility, and modern HTML5 features for robust web structures.</p>
+<div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+<div class="bg-red-500 h-2.5 rounded-full progress-bar" data-width="95%"></div>
 </div>
-</div>
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium text-gray-700">UX Research</span>
-<span class="text-primary">90%</span>
-</div>
-<div class="skill-bar">
-<div class="skill-progress" style="width: 90%"></div>
+<div class="flex justify-between text-sm text-gray-500">
+<span>Proficiency</span>
+<span>95%</span>
 </div>
 </div>
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium text-gray-700">Wireframing & Prototyping</span>
-<span class="text-primary">95%</span>
+<!-- CSS -->
+<div class="skill-card bg-white p-6 rounded-2xl shadow-lg fade-in-up">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 mr-4">
+<i class="ri-css3-line text-blue-500 ri-2x skill-icon"></i>
 </div>
-<div class="skill-bar">
-<div class="skill-progress" style="width: 95%"></div>
+<h3 class="text-xl font-semibold text-gray-900">CSS3 & SASS</h3>
 </div>
+<p class="text-gray-700 mb-4">Responsive designs, animations, and modern layout techniques including Grid and Flexbox.</p>
+<div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+<div class="bg-blue-500 h-2.5 rounded-full progress-bar" data-width="90%"></div>
 </div>
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium text-gray-700">Interaction Design</span>
-<span class="text-primary">85%</span>
-</div>
-<div class="skill-bar">
-<div class="skill-progress" style="width: 85%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium text-gray-700">Visual Design</span>
-<span class="text-primary">90%</span>
-</div>
-<div class="skill-bar">
-<div class="skill-progress" style="width: 90%"></div>
+<div class="flex justify-between text-sm text-gray-500">
+<span>Proficiency</span>
+<span>90%</span>
 </div>
 </div>
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-medium text-gray-700">Design Systems</span>
-<span class="text-primary">80%</span>
+<!-- JavaScript -->
+<div class="skill-card bg-white p-6 rounded-2xl shadow-lg fade-in-up">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-100 mr-4">
+<i class="ri-javascript-line text-yellow-500 ri-2x skill-icon"></i>
 </div>
-<div class="skill-bar">
-<div class="skill-progress" style="width: 80%"></div>
+<h3 class="text-xl font-semibold text-gray-900">JavaScript</h3>
+</div>
+<p class="text-gray-700 mb-4">ES6+, DOM manipulation, asynchronous programming, and interactive web experiences.</p>
+<div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+<div class="bg-yellow-500 h-2.5 rounded-full progress-bar" data-width="85%"></div>
+</div>
+<div class="flex justify-between text-sm text-gray-500">
+<span>Proficiency</span>
+<span>85%</span>
+</div>
+</div>
+<!-- React -->
+<div class="skill-card bg-white p-6 rounded-2xl shadow-lg fade-in-up">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-100 mr-4">
+<i class="ri-reactjs-line text-cyan-500 ri-2x skill-icon"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">React</h3>
+</div>
+<p class="text-gray-700 mb-4">Component-based architecture, hooks, state management, and single-page applications.</p>
+<div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+<div class="bg-cyan-500 h-2.5 rounded-full progress-bar" data-width="80%"></div>
+</div>
+<div class="flex justify-between text-sm text-gray-500">
+<span>Proficiency</span>
+<span>80%</span>
+</div>
+</div>
+<!-- Node.js -->
+<div class="skill-card bg-white p-6 rounded-2xl shadow-lg fade-in-up">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-green-100 mr-4">
+<i class="ri-nodejs-line text-green-500 ri-2x skill-icon"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Node.js</h3>
+</div>
+<p class="text-gray-700 mb-4">Server-side JavaScript, RESTful APIs, Express framework, and backend development.</p>
+<div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+<div class="bg-green-500 h-2.5 rounded-full progress-bar" data-width="75%"></div>
+</div>
+<div class="flex justify-between text-sm text-gray-500">
+<span>Proficiency</span>
+<span>75%</span>
+</div>
+</div>
+<!-- Git -->
+<div class="skill-card bg-white p-6 rounded-2xl shadow-lg fade-in-up">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 mr-4">
+<i class="ri-git-branch-line text-orange-500 ri-2x skill-icon"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Git & GitHub</h3>
+</div>
+<p class="text-gray-700 mb-4">Version control, collaborative workflows, branching strategies, and CI/CD integration.</p>
+<div class="w-full bg-gray-200 rounded-full h-2.5 mb-1">
+<div class="bg-orange-500 h-2.5 rounded-full progress-bar" data-width="85%"></div>
+</div>
+<div class="flex justify-between text-sm text-gray-500">
+<span>Proficiency</span>
+<span>85%</span>
 </div>
 </div>
 </div>
 </div>
-<!-- Tools -->
-<div>
-<h3 class="text-2xl font-bold text-gray-900 mb-6">Tools & Technologies</h3>
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-figma-line text-3xl"></i>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-6 fade-in-up">My Projects</h2>
+<p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto fade-in-up">A selection of my recent work showcasing my skills in web development and design. The following are sample projects that demonstrate my design and development approach. I plan to add my real-world work here soon as I complete client and personal projects.</p>
+<!-- Project Filter -->
+<div class="flex flex-wrap justify-center mb-12 fade-in-up">
+<button class="filter-btn active m-2 px-5 py-2 !rounded-button bg-primary text-white hover:bg-indigo-600 transition-colors whitespace-nowrap" data-filter="all">All Projects</button>
+<button class="filter-btn m-2 px-5 py-2 !rounded-button bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="frontend">Frontend</button>
+<button class="filter-btn m-2 px-5 py-2 !rounded-button bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="fullstack">Full Stack</button>
+<button class="filter-btn m-2 px-5 py-2 !rounded-button bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors whitespace-nowrap" data-filter="design">UI/UX Design</button>
 </div>
-<h4 class="font-medium text-gray-900">Figma</h4>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="project-card fade-in-up" data-category="frontend">
+<div class="relative overflow-hidden rounded-2xl shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=anime-style%20e-commerce%20website%20interface%2C%20modern%20and%20clean%20design%2C%20product%20showcase%2C%20shopping%20cart%2C%20user-friendly%20navigation%2C%20digital%20art%20style%2C%20professional%20web%20design&width=600&height=400&seq=4&orientation=landscape" alt="E-commerce Website" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="project-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">Anime Merch Shop</h3>
+<p class="text-center mb-4">A responsive e-commerce platform for anime merchandise with cart functionality and payment integration.</p>
+<div class="flex space-x-3">
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">React</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Redux</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Stripe</span>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-adobe-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">Adobe XD</h4>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-sketch-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">Sketch</h4>
+<!-- Project 2 -->
+<div class="project-card fade-in-up" data-category="fullstack">
+<div class="relative overflow-hidden rounded-2xl shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=anime-style%20social%20media%20dashboard%20interface%2C%20user%20profiles%2C%20post%20feed%2C%20notification%20system%2C%20messaging%20feature%2C%20modern%20web%20application%2C%20digital%20art%20style&width=600&height=400&seq=5&orientation=landscape" alt="Social Platform" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="project-overlay absolute inset-0 bg-secondary bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">AniConnect</h3>
+<p class="text-center mb-4">A social platform for anime enthusiasts to connect, share, and discuss their favorite series.</p>
+<div class="flex space-x-3">
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Node.js</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Express</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">MongoDB</span>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-photoshop-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">Photoshop</h4>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-illustrator-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">Illustrator</h4>
+<!-- Project 3 -->
+<div class="project-card fade-in-up" data-category="design">
+<div class="relative overflow-hidden rounded-2xl shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=anime-style%20mobile%20app%20interface%20design%2C%20user-friendly%20navigation%2C%20clean%20layout%2C%20vibrant%20colors%2C%20task%20management%20application%2C%20digital%20art%20style%2C%20professional%20UI%2FUX%20design&width=600&height=400&seq=6&orientation=landscape" alt="Task Manager App" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="project-overlay absolute inset-0 bg-indigo-400 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">TaskNinja</h3>
+<p class="text-center mb-4">A beautifully designed task management app with anime-inspired UI elements and intuitive UX.</p>
+<div class="flex space-x-3">
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Figma</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Adobe XD</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Prototyping</span>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-code-s-slash-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">HTML/CSS</h4>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-invision-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">InVision</h4>
+<!-- Project 4 -->
+<div class="project-card fade-in-up" data-category="frontend">
+<div class="relative overflow-hidden rounded-2xl shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=anime-style%20weather%20application%20interface%2C%20weather%20forecast%20display%2C%20location%20search%2C%20temperature%20visualization%2C%20clean%20modern%20design%2C%20digital%20art%20style%2C%20professional%20web%20application&width=600&height=400&seq=7&orientation=landscape" alt="Weather App" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="project-overlay absolute inset-0 bg-blue-500 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">WeatherNeko</h3>
+<p class="text-center mb-4">A weather application with anime-style illustrations that change based on current weather conditions.</p>
+<div class="flex space-x-3">
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">JavaScript</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">API</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">CSS Animation</span>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-prototype-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">Principle</h4>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-<div class="w-12 h-12 flex items-center justify-center mx-auto mb-4 text-primary">
-<i class="ri-file-list-3-line text-3xl"></i>
 </div>
-<h4 class="font-medium text-gray-900">Zeplin</h4>
+<!-- Project 5 -->
+<div class="project-card fade-in-up" data-category="fullstack">
+<div class="relative overflow-hidden rounded-2xl shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=anime-style%20learning%20platform%20interface%2C%20course%20catalog%2C%20video%20player%2C%20progress%20tracking%2C%20interactive%20quizzes%2C%20digital%20art%20style%2C%20professional%20educational%20web%20application&width=600&height=400&seq=8&orientation=landscape" alt="Learning Platform" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="project-overlay absolute inset-0 bg-green-500 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">CodeDojo</h3>
+<p class="text-center mb-4">An interactive learning platform for web development with gamified elements and progress tracking.</p>
+<div class="flex space-x-3">
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">React</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Firebase</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Auth0</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="project-card fade-in-up" data-category="design">
+<div class="relative overflow-hidden rounded-2xl shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=anime-style%20restaurant%20website%20design%2C%20menu%20display%2C%20reservation%20system%2C%20food%20gallery%2C%20chef%20profiles%2C%20digital%20art%20style%2C%20professional%20web%20design%20for%20Japanese%20restaurant&width=600&height=400&seq=9&orientation=landscape" alt="Restaurant Website" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="project-overlay absolute inset-0 bg-red-500 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+<h3 class="text-xl font-semibold mb-2">Sakura Dining</h3>
+<p class="text-center mb-4">A visually stunning website for a Japanese restaurant with online reservation and menu showcase.</p>
+<div class="flex space-x-3">
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">UI Design</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Illustration</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Branding</span>
+</div>
 </div>
 </div>
 </div>
@@ -379,100 +521,82 @@ color: white;
 </div>
 </section>
 <!-- Contact Section -->
-<section id="contact" class="py-20">
+<section id="contact" class="py-20" style="background-image: url('https://readdy.ai/api/search-image?query=anime-style%20abstract%20background%20with%20soft%20gradient%20from%20light%20blue%20to%20light%20purple%2C%20minimalist%2C%20subtle%20geometric%20patterns%2C%20perfect%20for%20contact%20section%20of%20web%20developer%20portfolio%2C%20clean%20and%20professional&width=1920&height=1080&seq=10&orientation=landscape'); background-size: cover; background-position: center;">
 <div class="container mx-auto px-4">
-<div class="max-w-3xl mx-auto text-center mb-16">
-<p class="text-primary font-medium mb-2">Get In Touch</p>
-<h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Work Together</h2>
-<div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
-<p class="text-gray-600">Have a project in mind or just want to say hello? I'd love to hear from you!</p>
-</div>
-<div class="grid md:grid-cols-2 gap-12">
-<div>
-<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+<div class="flex flex-col md:flex-row">
+<div class="md:w-2/5 bg-primary p-8 text-white">
+<h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+<p class="mb-8 leading-relaxed">Have a project in mind or just want to say hello? Feel free to reach out to me using the contact form or through any of the channels below.</p>
 <div class="space-y-6">
 <div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
-<i class="ri-mail-line text-xl"></i>
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mr-4 mt-1">
+<i class="ri-mail-line text-white"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-900 mb-1">Email</h4>
-<p class="text-gray-600">binaraakalanka@gmail.com</p>
+<h3 class="font-semibold mb-1">Email</h3>
+<p>binaraakalanka@gmail.com</p>
 </div>
 </div>
 <div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
-<i class="ri-phone-line text-xl"></i>
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mr-4 mt-1">
+<i class="ri-phone-line text-white"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-900 mb-1">Phone</h4>
-<p class="text-gray-600">+94 76 123 4567</p>
+<h3 class="font-semibold mb-1">Phone</h3>
+<p>+94 76 123 4567</p>
 </div>
 </div>
 <div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
-<i class="ri-map-pin-line text-xl"></i>
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 mr-4 mt-1">
+<i class="ri-map-pin-line text-white"></i>
 </div>
 <div>
-<h4 class="font-medium text-gray-900 mb-1">Location</h4>
-<p class="text-gray-600">Kaluthara, Sri Lanka</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary mr-4">
-<i class="ri-time-line text-xl"></i>
-</div>
-<div>
-<h4 class="font-medium text-gray-900 mb-1">Working Hours</h4>
-<p class="text-gray-600">Monday - Friday: 9am - 6pm</p>
+<h3 class="font-semibold mb-1">Location</h3>
+<p>Bandaragama, Kaluthara, <br>Sri Lanka</p>
 </div>
 </div>
 </div>
-<h3 class="text-2xl font-bold text-gray-900 mt-12 mb-6">Connect With Me</h3>
+<div class="mt-10">
+<h3 class="font-semibold mb-4">Connect With Me</h3>
 <div class="flex space-x-4">
-<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
-<i class="ri-dribbble-line text-xl"></i>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 text-white hover:bg-opacity-30 transition-colors social-icon">
+<i class="ri-github-fill"></i>
 </a>
-<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
-<i class="ri-behance-line text-xl"></i>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 text-white hover:bg-opacity-30 transition-colors social-icon">
+<i class="ri-linkedin-fill"></i>
 </a>
-<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
-<i class="ri-linkedin-line text-xl"></i>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 text-white hover:bg-opacity-30 transition-colors social-icon">
+<i class="ri-twitter-fill"></i>
 </a>
-<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
-<i class="ri-instagram-line text-xl"></i>
-</a>
-<a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all">
-<i class="ri-twitter-x-line text-xl"></i>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-20 text-white hover:bg-opacity-30 transition-colors social-icon">
+<i class="ri-dribbble-fill"></i>
 </a>
 </div>
 </div>
-<div>
-<h3 class="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
+</div>
+<div class="md:w-3/5 p-8">
+<h2 class="text-2xl font-bold mb-6 text-gray-900">Send Me a Message</h2>
 <form id="contact-form" class="space-y-6">
-<div class="grid md:grid-cols-2 gap-6">
 <div>
-<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-<input type="text" id="name" name="name" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your name" required>
-</div>
-<div>
-<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-<input type="email" id="email" name="email" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your email" required>
-</div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+<input type="text" id="name" name="name" class="form-input w-full px-4 py-3 rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-20 transition-colors" placeholder="John Doe" required>
 </div>
 <div>
-<label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-<input type="text" id="subject" name="subject" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Subject" required>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+<input type="email" id="email" name="email" class="form-input w-full px-4 py-3 rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-20 transition-colors" placeholder="john@example.com" required>
 </div>
 <div>
-<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-<textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border-none bg-gray-100 rounded text-gray-800 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Your message" required></textarea>
+<label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+<input type="text" id="subject" name="subject" class="form-input w-full px-4 py-3 rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-20 transition-colors" placeholder="Project Inquiry" required>
 </div>
-<button type="submit" class="w-full bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all flex items-center justify-center whitespace-nowrap">
-<i class="ri-send-plane-line mr-2"></i>
-Send Message
-</button>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+<textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-3 rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-20 transition-colors" placeholder="Hello, I'd like to discuss a project..." required></textarea>
+</div>
+<button type="submit" class="submit-btn w-full py-3 !rounded-button text-white font-medium whitespace-nowrap">Send Message</button>
 </form>
+</div>
 </div>
 </div>
 </div>
@@ -480,117 +604,115 @@ Send Message
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
 <div class="container mx-auto px-4">
-<div class="grid md:grid-cols-3 gap-8">
-<div>
-<a href="#" class="text-2xl font-['Poppins'] font-bold text-white mb-4 inline-block">Binara<span class="text-primary">.Design</span></a>
-<p class="text-gray-400 mb-6">Crafting user-centered digital experiences that combine aesthetics with functionality.</p>
-<div class="flex space-x-4">
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-dribbble-line text-xl"></i>
-</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-behance-line text-xl"></i>
-</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-linkedin-line text-xl"></i>
-</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors">
-<i class="ri-instagram-line text-xl"></i>
-</a>
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<a href="#" class="text-2xl font-semibold text-primary text-white">Binara</a>
+<p class="mt-2 text-gray-400">Creating beautiful web experiences</p>
 </div>
-</div>
+<div class="flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0">
 <div>
-<h4 class="text-lg font-bold mb-4">Quick Links</h4>
+<h3 class="text-lg font-semibold mb-3">Quick Links</h3>
 <ul class="space-y-2">
-<li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">About Me</a></li>
-<li><a href="#skills" class="text-gray-400 hover:text-primary transition-colors">Skills</a></li>
-<li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+<li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+<li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
 </ul>
 </div>
 <div>
-<h4 class="text-lg font-bold mb-4">Services</h4>
+<h3 class="text-lg font-semibold mb-3">Services</h3>
 <ul class="space-y-2">
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">UI Design</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">UX Research</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Prototyping</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Design Systems</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Brand Identity</a></li>
-<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Consultation</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">UI/UX Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile Apps</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Consulting</a></li>
 </ul>
 </div>
 </div>
-<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Binara Akalanka. All rights reserved.</p>
-<div class="flex space-x-6">
-<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Privacy Policy</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Terms of Service</a>
-<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Cookies Policy</a>
+</div>
+<div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">© 2025 Binara Akalanka. All rights reserved.</p>
+<div class="mt-4 md:mt-0 flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
 </div>
 </div>
 </div>
 </footer>
-<a href="#" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all">
-<i class="ri-arrow-up-line text-xl"></i>
-</a>
-<script id="navigation-script">
+<!-- Mobile Menu Script -->
+<script id="mobile-menu-script">
 document.addEventListener('DOMContentLoaded', function() {
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-mobileMenuButton.addEventListener('click', function() {
-mobileMenu.classList.toggle('hidden');
+const menuToggle = document.getElementById('menu-toggle');
+const closeMenu = document.getElementById('close-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+const hamburger = document.querySelector('.hamburger');
+menuToggle.addEventListener('click', function() {
+mobileMenu.classList.add('open');
+hamburger.classList.add('open');
 });
-// Close mobile menu when clicking on a link
+closeMenu.addEventListener('click', function() {
+mobileMenu.classList.remove('open');
+hamburger.classList.remove('open');
+});
+// Close menu when clicking on a link
 const mobileLinks = mobileMenu.querySelectorAll('a');
 mobileLinks.forEach(link => {
 link.addEventListener('click', function() {
-mobileMenu.classList.add('hidden');
-});
-});
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-if (targetId === '#') return;
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80,
-behavior: 'smooth'
-});
-}
+mobileMenu.classList.remove('open');
+hamburger.classList.remove('open');
 });
 });
 });
 </script>
-<script id="scroll-progress-script">
+<!-- Scroll Animation Script -->
+<script id="scroll-animation-script">
 document.addEventListener('DOMContentLoaded', function() {
-const progressBar = document.querySelector('.progress-bar');
-const backToTop = document.getElementById('back-to-top');
-window.addEventListener('scroll', function() {
-// Update progress bar
-const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-const scrolled = (window.scrollY / windowHeight) * 100;
-progressBar.style.width = scrolled + '%';
-// Show/hide back to top button
-if (window.scrollY > 300) {
-backToTop.classList.remove('opacity-0', 'invisible');
-backToTop.classList.add('opacity-100', 'visible');
+const fadeElements = document.querySelectorAll('.fade-in-up');
+const options = {
+root: null,
+rootMargin: '0px',
+threshold: 0.1
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
 } else {
-backToTop.classList.remove('opacity-100', 'visible');
-backToTop.classList.add('opacity-0', 'invisible');
+entry.target.classList.remove('visible');
 }
 });
-// Back to top functionality
-backToTop.addEventListener('click', function(e) {
-e.preventDefault();
-window.scrollTo({
-top: 0,
-behavior: 'smooth'
-});
+}, options);
+fadeElements.forEach(element => {
+observer.observe(element);
 });
 });
 </script>
+<!-- Progress Bar Animation Script -->
+<script id="progress-bar-script">
+document.addEventListener('DOMContentLoaded', function() {
+const progressBars = document.querySelectorAll('.progress-bar');
+function animateProgressBars() {
+progressBars.forEach(bar => {
+const width = bar.getAttribute('data-width');
+bar.style.width = width;
+});
+}
+// Animate when skills section is in view
+const skillsSection = document.getElementById('skills');
+function checkSkillsInView() {
+const skillsTop = skillsSection.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (skillsTop < windowHeight * 0.75) {
+animateProgressBars();
+window.removeEventListener('scroll', checkSkillsInView);
+}
+}
+window.addEventListener('scroll', checkSkillsInView);
+checkSkillsInView(); // Initial check
+});
+</script>
+<!-- Project Filter Script -->
 <script id="project-filter-script">
 document.addEventListener('DOMContentLoaded', function() {
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -598,11 +720,13 @@ const projectCards = document.querySelectorAll('.project-card');
 filterButtons.forEach(button => {
 button.addEventListener('click', function() {
 // Remove active class from all buttons
-filterButtons.forEach(btn => btn.classList.remove('active'));
+filterButtons.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-white'));
+filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
 // Add active class to clicked button
-this.classList.add('active');
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('bg-gray-200', 'text-gray-700');
 const filter = this.getAttribute('data-filter');
-// Show/hide projects based on filter
+// Filter projects
 projectCards.forEach(card => {
 if (filter === 'all' || card.getAttribute('data-category') === filter) {
 card.style.display = 'block';
@@ -614,6 +738,7 @@ card.style.display = 'none';
 });
 });
 </script>
+<!-- Contact Form Script -->
 <script id="contact-form-script">
 document.addEventListener('DOMContentLoaded', function() {
 const contactForm = document.getElementById('contact-form');
@@ -624,15 +749,114 @@ const name = document.getElementById('name').value;
 const email = document.getElementById('email').value;
 const subject = document.getElementById('subject').value;
 const message = document.getElementById('message').value;
-// Here you would typically send the form data to a server
-// For demonstration, we'll just log it and show a success message
-console.log({ name, email, subject, message });
+// Simulate form submission (in a real app, you would send to a server)
+const submitButton = contactForm.querySelector('button[type="submit"]');
+const originalText = submitButton.textContent;
+submitButton.disabled = true;
+submitButton.textContent = 'Sending...';
+// Simulate API call
+setTimeout(() => {
 // Reset form
 contactForm.reset();
-// Show success message (in a real application)
-alert('Thank you for your message! I will get back to you soon.');
+// Show success message
+submitButton.textContent = 'Message Sent!';
+submitButton.classList.add('bg-green-500');
+// Reset button after 3 seconds
+setTimeout(() => {
+submitButton.textContent = originalText;
+submitButton.classList.remove('bg-green-500');
+submitButton.disabled = false;
+}, 3000);
+}, 1500);
 });
 });
+</script>
+<!-- Cursor Trail Animation -->
+<script id="cursor-trail-script">
+document.addEventListener('DOMContentLoaded', function() {
+const cursorContainer = document.getElementById('cursor-container');
+const trails = [];
+const maxTrails = 10;
+// Create initial trail elements
+for (let i = 0; i < maxTrails; i++) {
+const trail = document.createElement('div');
+trail.classList.add('cursor-trail');
+trail.style.opacity = (1 - i / maxTrails).toString();
+trail.style.transform = 'scale(' + (1 - i / maxTrails) + ')';
+cursorContainer.appendChild(trail);
+trails.push({
+element: trail,
+x: 0,
+y: 0
+});
+}
+// Update trail positions on mouse move
+document.addEventListener('mousemove', function(e) {
+// Update the first trail to mouse position
+trails[0].x = e.clientX;
+trails[0].y = e.clientY;
+// Update trail elements
+requestAnimationFrame(() => {
+for (let i = 0; i < trails.length; i++) {
+const trail = trails[i];
+// Position the trail
+trail.element.style.left = trail.x + 'px';
+trail.element.style.top = trail.y + 'px';
+// Follow previous trail with delay
+if (i < trails.length - 1) {
+trails[i + 1].x = trail.x;
+trails[i + 1].y = trail.y;
+}
+}
+});
+});
+// Hide trails when mouse leaves window
+document.addEventListener('mouseout', function(e) {
+if (e.relatedTarget === null) {
+trails.forEach(trail => {
+trail.element.style.opacity = '0';
+});
+}
+});
+// Show trails when mouse enters window
+document.addEventListener('mouseover', function() {
+trails.forEach((trail, i) => {
+trail.element.style.opacity = (1 - i / maxTrails).toString();
+});
+});
+});
+</script>
+<!-- Smooth Scroll Script -->
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80, // Adjust for fixed header
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_ztwru4r', 'template_hu7xism', this)
+      .then(function() {
+        alert('Message sent successfully!');
+        document.getElementById('contact-form').reset();
+      }, function(error) {
+        alert('Failed to send message: ' + JSON.stringify(error));
+      });
+  });
 </script>
 </body>
 </html>
